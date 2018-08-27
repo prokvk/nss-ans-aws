@@ -28,14 +28,12 @@ RUN ssh-keyscan bitbucket.org >> ~/.ssh/known_hosts
 
 # ansible
 RUN echo "===> Installing ansible..."  && \
-	apk --update add ansible && \
-	\
-	\
 	echo "===> Adding Python runtime..."  && \
 	apk --update add python py-pip openssl ca-certificates	&& \
 	apk --update add --virtual build-dependencies \
 				python-dev libffi-dev openssl-dev build-base  && \
 	pip install --upgrade pip cffi							&& \
+	pip install git+git://github.com/ansible/ansible.git@stable-2.6	&& \
 	\
 	\
 	echo "===> Removing package list..."  && \
