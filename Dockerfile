@@ -19,7 +19,7 @@ RUN echo "http://dl-4.alpinelinux.org/alpine/v3.1/main" >> /etc/apk/repositories
 		openssh-client
 
 RUN npm install -g coffee-script
-RUN npm install -g grunt-cli
+RUN npm install -g typescript
 RUN npm install -g nodemon
 RUN mkdir -p /var/log/supervisor
 
